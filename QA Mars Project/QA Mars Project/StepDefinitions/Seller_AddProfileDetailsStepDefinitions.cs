@@ -43,13 +43,26 @@ namespace QA_Mars_Project.StepDefinitions
         [When(@"User update the description")]
         public void WhenUserUpdateTheDescription()
         {
-           
+            profilePageObj.AddDescription(driver);
+        }
+
+        [Then(@"the profile description should be updated successfully")]
+        public void ThenTheProfileDescriptionShouldBeUpdatedSuccessfully()
+        {
+            profilePageObj.ProfileDiscriptionSuccessfullyUpdated(driver);
         }
 
         [When(@"User update the languages")]
         public void WhenUserUpdateTheLanguages()
         {
-            
+            profilePageObj.AddLanguage(driver);
         }
+        
+        [Then(@"the profile language should be updated successfully")]
+        public void ThenTheProfileLanguageShouldBeUpdatedSuccessfully()
+        {
+            profilePageObj.ProfileLanguageSuccessfullyUpdated(driver);
+        }
+
     }
 }
